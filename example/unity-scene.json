@@ -63,9 +63,9 @@
             "m_AmbientIntensity": "1",
             "m_AmbientMode": "0",
             "m_SubtractiveShadowColor": {
-              "r": "0.42",
-              "g": "0.478",
-              "b": "0.627",
+              "r": "0.34509802",
+              "g": "0.5700116",
+              "b": "0.90588236",
               "a": "1"
             },
             "m_SkyboxMaterial": {
@@ -236,7 +236,7 @@
                     "type": "3"
                   },
                   "propertyPath": "m_LocalPosition.x",
-                  "value": "0.105",
+                  "value": "0.026",
                   "objectReference": {
                     "fileID": "0"
                   }
@@ -248,7 +248,7 @@
                     "type": "3"
                   },
                   "propertyPath": "m_LocalPosition.y",
-                  "value": "0.24",
+                  "value": "0.236",
                   "objectReference": {
                     "fileID": "0"
                   }
@@ -260,7 +260,7 @@
                     "type": "3"
                   },
                   "propertyPath": "m_LocalPosition.z",
-                  "value": "-1.773",
+                  "value": "-1.836",
                   "objectReference": {
                     "fileID": "0"
                   }
@@ -372,7 +372,7 @@
           }
         },
         {
-          "fileId": "243434996",
+          "fileId": "334029725",
           "type": "1",
           "GameObject": {
             "m_ObjectHideFlags": "0",
@@ -389,22 +389,17 @@
             "m_Component": [
               {
                 "component": {
-                  "fileID": "243434998"
+                  "fileID": "334029727"
                 }
               },
               {
                 "component": {
-                  "fileID": "243434997"
-                }
-              },
-              {
-                "component": {
-                  "fileID": "243434999"
+                  "fileID": "334029726"
                 }
               }
             ],
             "m_Layer": "0",
-            "m_Name": "GameObject",
+            "m_Name": "Point Light (1)",
             "m_TagString": "Untagged",
             "m_Icon": {
               "fileID": "0"
@@ -415,9 +410,9 @@
           }
         },
         {
-          "fileId": "243434997",
-          "type": "114",
-          "MonoBehaviour": {
+          "fileId": "334029726",
+          "type": "108",
+          "Light": {
             "m_ObjectHideFlags": "0",
             "m_CorrespondingSourceObject": {
               "fileID": "0"
@@ -429,21 +424,87 @@
               "fileID": "0"
             },
             "m_GameObject": {
-              "fileID": "243434996"
+              "fileID": "334029725"
             },
             "m_Enabled": "1",
-            "m_EditorHideFlags": "0",
-            "m_Script": {
-              "fileID": "11500000",
-              "guid": "3f29465e0db07b64d8eaf493acb062fb",
-              "type": "3"
+            "serializedVersion": "10",
+            "m_Type": "2",
+            "m_Shape": "0",
+            "m_Color": {
+              "r": "0.01234436",
+              "g": "0",
+              "b": "1",
+              "a": "1"
             },
-            "m_Name": null,
-            "m_EditorClassIdentifier": null
+            "m_Intensity": "1",
+            "m_Range": "10",
+            "m_SpotAngle": "30",
+            "m_InnerSpotAngle": "21.80208",
+            "m_CookieSize": "10",
+            "m_Shadows": {
+              "m_Type": "0",
+              "m_Resolution": "-1",
+              "m_CustomResolution": "-1",
+              "m_Strength": "1",
+              "m_Bias": "0.05",
+              "m_NormalBias": "0.4",
+              "m_NearPlane": "0.2",
+              "m_CullingMatrixOverride": {
+                "e00": "1",
+                "e01": "0",
+                "e02": "0",
+                "e03": "0",
+                "e10": "0",
+                "e11": "1",
+                "e12": "0",
+                "e13": "0",
+                "e20": "0",
+                "e21": "0",
+                "e22": "1",
+                "e23": "0",
+                "e30": "0",
+                "e31": "0",
+                "e32": "0",
+                "e33": "1"
+              },
+              "m_UseCullingMatrixOverride": "0"
+            },
+            "m_Cookie": {
+              "fileID": "0"
+            },
+            "m_DrawHalo": "0",
+            "m_Flare": {
+              "fileID": "0"
+            },
+            "m_RenderMode": "0",
+            "m_CullingMask": {
+              "serializedVersion": "2",
+              "m_Bits": "4294967295"
+            },
+            "m_RenderingLayerMask": "1",
+            "m_Lightmapping": "4",
+            "m_LightShadowCasterMode": "0",
+            "m_AreaSize": {
+              "x": "1",
+              "y": "1"
+            },
+            "m_BounceIntensity": "1",
+            "m_ColorTemperature": "6570",
+            "m_UseColorTemperature": "0",
+            "m_BoundingSphereOverride": {
+              "x": "0",
+              "y": "0",
+              "z": "0",
+              "w": "0"
+            },
+            "m_UseBoundingSphereOverride": "0",
+            "m_UseViewFrustumForShadowCasterCull": "1",
+            "m_ShadowRadius": "0",
+            "m_ShadowAngle": "0"
           }
         },
         {
-          "fileId": "243434998",
+          "fileId": "334029727",
           "type": "4",
           "Transform": {
             "m_ObjectHideFlags": "0",
@@ -457,7 +518,7 @@
               "fileID": "0"
             },
             "m_GameObject": {
-              "fileID": "243434996"
+              "fileID": "334029725"
             },
             "m_LocalRotation": {
               "x": "0",
@@ -466,9 +527,9 @@
               "w": "1"
             },
             "m_LocalPosition": {
-              "x": "-8.245889",
-              "y": "-3.913503",
-              "z": "-3.1317713"
+              "x": "0.46",
+              "y": "-1.91",
+              "z": "-3.79"
             },
             "m_LocalScale": {
               "x": "1",
@@ -486,104 +547,6 @@
               "y": "0",
               "z": "0"
             }
-          }
-        },
-        {
-          "fileId": "243434999",
-          "type": "114",
-          "MonoBehaviour": {
-            "m_ObjectHideFlags": "0",
-            "m_CorrespondingSourceObject": {
-              "fileID": "0"
-            },
-            "m_PrefabInstance": {
-              "fileID": "0"
-            },
-            "m_PrefabAsset": {
-              "fileID": "0"
-            },
-            "m_GameObject": {
-              "fileID": "243434996"
-            },
-            "m_Enabled": "1",
-            "m_EditorHideFlags": "0",
-            "m_Script": {
-              "fileID": "11500000",
-              "guid": "8e5ac92bc18f545cc84cd886ece82b4d",
-              "type": "3"
-            },
-            "m_Name": null,
-            "m_EditorClassIdentifier": null,
-            "editorData": {
-              "_bezierPath": {
-                "points": [
-                  {
-                    "x": "-2",
-                    "y": "0",
-                    "z": "0"
-                  },
-                  {
-                    "x": "-1",
-                    "y": "0.5",
-                    "z": "0"
-                  },
-                  {
-                    "x": "1",
-                    "y": "-0.5",
-                    "z": "0"
-                  },
-                  {
-                    "x": "2",
-                    "y": "0",
-                    "z": "0"
-                  }
-                ],
-                "isClosed": "0",
-                "space": "0",
-                "controlMode": "0",
-                "autoControlLength": "0.3",
-                "boundsUpToDate": "0",
-                "bounds": {
-                  "m_Center": {
-                    "x": "0",
-                    "y": "0",
-                    "z": "0"
-                  },
-                  "m_Extent": {
-                    "x": "0",
-                    "y": "0",
-                    "z": "0"
-                  }
-                },
-                "perAnchorNormalsAngle": [
-                  "0",
-                  "0"
-                ],
-                "globalNormalsAngle": "0",
-                "flipNormals": "0"
-              },
-              "vertexPathUpToDate": "0",
-              "vertexPathMaxAngleError": "0.3",
-              "vertexPathMinVertexSpacing": "0.01",
-              "showTransformTool": "1",
-              "showPathBounds": "0",
-              "showPerSegmentBounds": "0",
-              "displayAnchorPoints": "1",
-              "displayControlPoints": "1",
-              "bezierHandleScale": "1",
-              "globalDisplaySettingsFoldout": "0",
-              "keepConstantHandleSize": "0",
-              "showNormalsInVertexMode": "0",
-              "showBezierPathInVertexMode": "0",
-              "showDisplayOptions": "0",
-              "showPathOptions": "1",
-              "showVertexPathDisplayOptions": "0",
-              "showVertexPathOptions": "1",
-              "showNormals": "0",
-              "showNormalsHelpInfo": "0",
-              "tabIndex": "0"
-            },
-            "initialized": "1"
           }
         },
         {
@@ -668,11 +631,11 @@
             },
             "m_Enabled": "1",
             "serializedVersion": "2",
-            "m_ClearFlags": "1",
+            "m_ClearFlags": "2",
             "m_BackGroundColor": {
-              "r": "0.19215687",
-              "g": "0.3019608",
-              "b": "0.4745098",
+              "r": "0",
+              "g": "0",
+              "b": "0",
               "a": "0"
             },
             "m_projectionMatrixMode": "1",
@@ -743,9 +706,9 @@
               "w": "0.9772884"
             },
             "m_LocalPosition": {
-              "x": "-0.045",
-              "y": "0.067",
-              "z": "-3.328"
+              "x": "-0.06",
+              "y": "0.09",
+              "z": "-3.16"
             },
             "m_LocalScale": {
               "x": "1",
@@ -766,7 +729,7 @@
           }
         },
         {
-          "fileId": "1347204322",
+          "fileId": "2112309664",
           "type": "1",
           "GameObject": {
             "m_ObjectHideFlags": "0",
@@ -783,12 +746,12 @@
             "m_Component": [
               {
                 "component": {
-                  "fileID": "1347204324"
+                  "fileID": "2112309666"
                 }
               },
               {
                 "component": {
-                  "fileID": "1347204323"
+                  "fileID": "2112309665"
                 }
               }
             ],
@@ -804,7 +767,7 @@
           }
         },
         {
-          "fileId": "1347204323",
+          "fileId": "2112309665",
           "type": "108",
           "Light": {
             "m_ObjectHideFlags": "0",
@@ -818,7 +781,7 @@
               "fileID": "0"
             },
             "m_GameObject": {
-              "fileID": "1347204322"
+              "fileID": "2112309664"
             },
             "m_Enabled": "1",
             "serializedVersion": "10",
@@ -826,8 +789,8 @@
             "m_Shape": "0",
             "m_Color": {
               "r": "1",
-              "g": "1",
-              "b": "1",
+              "g": "0.58214724",
+              "b": "0.1273585",
               "a": "1"
             },
             "m_Intensity": "1",
@@ -898,7 +861,7 @@
           }
         },
         {
-          "fileId": "1347204324",
+          "fileId": "2112309666",
           "type": "4",
           "Transform": {
             "m_ObjectHideFlags": "0",
@@ -912,7 +875,7 @@
               "fileID": "0"
             },
             "m_GameObject": {
-              "fileID": "1347204322"
+              "fileID": "2112309664"
             },
             "m_LocalRotation": {
               "x": "0",
@@ -921,9 +884,9 @@
               "w": "1"
             },
             "m_LocalPosition": {
-              "x": "3.08",
-              "y": "2.07",
-              "z": "1.93"
+              "x": "-2.01",
+              "y": "0.98",
+              "z": "-2.88"
             },
             "m_LocalScale": {
               "x": "1",
@@ -969,23 +932,6 @@
           "fileId": "2",
           "type": "fileFormatVersion:",
           "guid": "b090babbbde62f64c8b70e7b951d0046",
-          "folderAsset": "yes",
-          "DefaultImporter": {
-            "externalObjects": {},
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "35b4b1bf2a0c8da47b71ee92151e1c91",
           "folderAsset": "yes",
           "DefaultImporter": {
             "externalObjects": {},
@@ -1143,1210 +1089,6 @@
           "guid": "522f81113b7bac444a17773e5b149786",
           "TextScriptImporter": {
             "externalObjects": {},
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "856133338e5935c4ea7215ea837b00da",
-          "folderAsset": "yes",
-          "timeCreated": "1546380202",
-          "licenseType": "Store",
-          "DefaultImporter": {
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Documentation.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "7f53e212088d741abad12e1f2315eee7",
-          "folderAsset": "yes",
-          "DefaultImporter": {
-            "externalObjects": {},
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Core.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "fded9f896ea32473eb30ae61b640a176",
-          "folderAsset": "yes",
-          "timeCreated": "1519645413",
-          "licenseType": "Store",
-          "DefaultImporter": {
-            "externalObjects": {},
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Scripts.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "4708a8b1933bb914e98024a2cd57b3a8",
-          "folderAsset": "yes",
-          "DefaultImporter": {
-            "externalObjects": {},
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Scenes.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "7fa8a76a6a31dba43b3f224aa4c8ef31",
-          "folderAsset": "yes",
-          "DefaultImporter": {
-            "externalObjects": {},
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Prefabs.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "3331696fd1c6e4ce399332471e58fe60",
-          "folderAsset": "yes",
-          "DefaultImporter": {
-            "externalObjects": {},
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Materials.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "ba68311e0a74e694fbd8f64185d03175",
-          "folderAsset": "yes",
-          "DefaultImporter": {
-            "externalObjects": {},
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Documentation/Documentation.pdf.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "e7b865996e4d342a39bbea59a2e43a53",
-          "DefaultImporter": {
-            "externalObjects": {},
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Core/Settings.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "4f9b1508dc64040469b4b1ee117d27a9",
-          "folderAsset": "yes",
-          "DefaultImporter": {
-            "externalObjects": {},
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Core/Runtime.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "c62dae0f992c5174a951248617cc5720",
-          "folderAsset": "yes",
-          "DefaultImporter": {
-            "externalObjects": {},
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Core/Editor.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "76c2f3171eae9954aa317277dbffd478",
-          "folderAsset": "yes",
-          "DefaultImporter": {
-            "externalObjects": {},
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Scripts/RoadMeshCreator.cs.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "b275c3b78f8717c4cbc60f74a3247f67",
-          "timeCreated": "1546381468",
-          "licenseType": "Store",
-          "MonoImporter": {
-            "serializedVersion": "2",
-            "defaultReferences": [
-              {
-                "pathCreator": {
-                  "instanceID": "0"
-                }
-              },
-              {
-                "roadMaterial": {
-                  "fileID": "2100000",
-                  "guid": "b5df4735192845740bd11076dc9cdc99",
-                  "type": "2"
-                }
-              },
-              {
-                "undersideMaterial": {
-                  "fileID": "2100000",
-                  "guid": "c1d8d882244c5344fa86a8fd23246f81",
-                  "type": "2"
-                }
-              }
-            ],
-            "executionOrder": "0",
-            "icon": {
-              "instanceID": "0"
-            },
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Scripts/PathSpawner.cs.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "b617cc208d0104cad9534d503ff3e1cf",
-          "MonoImporter": {
-            "externalObjects": {},
-            "serializedVersion": "2",
-            "defaultReferences": [],
-            "executionOrder": "0",
-            "icon": {
-              "instanceID": "0"
-            },
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Scripts/PathSceneTool.cs.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "83aca5399f4e71c44b5d6c1314b5b95f",
-          "MonoImporter": {
-            "externalObjects": {},
-            "serializedVersion": "2",
-            "defaultReferences": [],
-            "executionOrder": "0",
-            "icon": {
-              "instanceID": "0"
-            },
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Scripts/PathPlacer.cs.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "d12b1fe1b42884d7692049d7f6f79ee9",
-          "MonoImporter": {
-            "externalObjects": {},
-            "serializedVersion": "2",
-            "defaultReferences": [],
-            "executionOrder": "0",
-            "icon": {
-              "instanceID": "0"
-            },
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Scripts/PathFollower.cs.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "33aabe1a2dec93349b06e6e5dc51bc06",
-          "MonoImporter": {
-            "externalObjects": {},
-            "serializedVersion": "2",
-            "defaultReferences": [],
-            "executionOrder": "0",
-            "icon": {
-              "instanceID": "0"
-            },
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Scripts/GeneratePathExample.cs.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "f417e74782fffcd40b77b0fdbe82af04",
-          "MonoImporter": {
-            "externalObjects": {},
-            "serializedVersion": "2",
-            "defaultReferences": [],
-            "executionOrder": "0",
-            "icon": {
-              "instanceID": "0"
-            },
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Scripts/Editor.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "37afd3c65f48fa94bbb5a65473466658",
-          "folderAsset": "yes",
-          "DefaultImporter": {
-            "externalObjects": {},
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Prefabs/Sphere.prefab.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "cb2e1e8aa0d44489c8d332b91c9a4202",
-          "PrefabImporter": {
-            "externalObjects": {},
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Prefabs/Path.prefab.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "2791553a612d84e7c9f3c0a95308376f",
-          "NativeFormatImporter": {
-            "externalObjects": {},
-            "mainObjectFileID": "100100000",
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Prefabs/Follower.prefab.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "761d600d1e80341ac97f3228771ce637",
-          "NativeFormatImporter": {
-            "externalObjects": {},
-            "mainObjectFileID": "100100000",
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Prefabs/Cube.prefab.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "f19b52bc2573b4e508c60232d5ba4c53",
-          "PrefabImporter": {
-            "externalObjects": {},
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Scenes/Road.unity.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "8f020cfa1fb7ded47926b050b82adbe6",
-          "DefaultImporter": {
-            "externalObjects": {},
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Scenes/Path as Prefab.unity.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "7c3960531f0fd44beaacc5037d708071",
-          "DefaultImporter": {
-            "externalObjects": {},
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Scenes/Object Placement.unity.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "f9d700f5f914447f48566abe5b02d921",
-          "DefaultImporter": {
-            "externalObjects": {},
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Scenes/Generate Path.unity.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "3145d476fb2c7f242875d23b77320de4",
-          "DefaultImporter": {
-            "externalObjects": {},
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Scenes/Follow Path.unity.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "c1e712ad623461e418f182144cf61384",
-          "DefaultImporter": {
-            "externalObjects": {},
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Materials/Road.mat.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "b5df4735192845740bd11076dc9cdc99",
-          "timeCreated": "1546381442",
-          "licenseType": "Store",
-          "NativeFormatImporter": {
-            "mainObjectFileID": "2100000",
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Materials/Road Underside.mat.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "c1d8d882244c5344fa86a8fd23246f81",
-          "timeCreated": "1519840206",
-          "licenseType": "Store",
-          "NativeFormatImporter": {
-            "externalObjects": {},
-            "mainObjectFileID": "2100000",
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Materials/Road Texture.png.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "eef7def8a6d89134284369bbe0145515",
-          "timeCreated": "1546381451",
-          "licenseType": "Store",
-          "TextureImporter": {
-            "fileIDToRecycleName": {},
-            "serializedVersion": "4",
-            "mipmaps": {
-              "mipMapMode": "0",
-              "enableMipMap": "1",
-              "sRGBTexture": "1",
-              "linearTexture": "0",
-              "fadeOut": "0",
-              "borderMipMap": "0",
-              "mipMapsPreserveCoverage": "0",
-              "alphaTestReferenceValue": "0.5",
-              "mipMapFadeDistanceStart": "1",
-              "mipMapFadeDistanceEnd": "3"
-            },
-            "bumpmap": {
-              "convertToNormalMap": "0",
-              "externalNormalMap": "0",
-              "heightScale": "0.25",
-              "normalMapFilter": "0"
-            },
-            "isReadable": "0",
-            "grayScaleToAlpha": "0",
-            "generateCubemap": "6",
-            "cubemapConvolution": "0",
-            "seamlessCubemap": "0",
-            "textureFormat": "1",
-            "maxTextureSize": "2048",
-            "textureSettings": {
-              "serializedVersion": "2",
-              "filterMode": "-1",
-              "aniso": "-1",
-              "mipBias": "-1",
-              "wrapU": "-1",
-              "wrapV": "-1",
-              "wrapW": "-1"
-            },
-            "nPOTScale": "1",
-            "lightmap": "0",
-            "compressionQuality": "50",
-            "spriteMode": "0",
-            "spriteExtrude": "1",
-            "spriteMeshType": "1",
-            "alignment": "0",
-            "spritePivot": {
-              "x": "0.5",
-              "y": "0.5"
-            },
-            "spriteBorder": {
-              "x": "0",
-              "y": "0",
-              "z": "0",
-              "w": "0"
-            },
-            "spritePixelsToUnits": "100",
-            "alphaUsage": "1",
-            "alphaIsTransparency": "0",
-            "spriteTessellationDetail": "-1",
-            "textureType": "0",
-            "textureShape": "1",
-            "maxTextureSizeSet": "0",
-            "compressionQualitySet": "0",
-            "textureFormatSet": "0",
-            "platformSettings": [
-              {
-                "buildTarget": "DefaultTexturePlatform",
-                "maxTextureSize": "2048",
-                "textureFormat": "-1",
-                "textureCompression": "1",
-                "compressionQuality": "50",
-                "crunchedCompression": "0",
-                "allowsAlphaSplitting": "0",
-                "overridden": "0"
-              }
-            ],
-            "spriteSheet": {
-              "serializedVersion": "2",
-              "sprites": [],
-              "outline": [],
-              "physicsShape": []
-            },
-            "spritePackingTag": null,
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Materials/Red.mat.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "01763a1c279a5cd4d8f897f6b6cdbae5",
-          "NativeFormatImporter": {
-            "externalObjects": {},
-            "mainObjectFileID": "2100000",
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Materials/Green.mat.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "9ca80467a033e954a8b9ad8601d6f4c7",
-          "NativeFormatImporter": {
-            "externalObjects": {},
-            "mainObjectFileID": "2100000",
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Materials/Dark Grey.mat.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "407e3de4fbbcf4a99b17bf5aac2d28d8",
-          "NativeFormatImporter": {
-            "externalObjects": {},
-            "mainObjectFileID": "2100000",
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Materials/Brown.mat.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "d5b3a558a1e7f4a4182b166bb2f27cf7",
-          "timeCreated": "1519840206",
-          "licenseType": "Store",
-          "NativeFormatImporter": {
-            "externalObjects": {},
-            "mainObjectFileID": "2100000",
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Materials/Blue.mat.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "5c270a73328a99e439fec44a0cf3a17d",
-          "NativeFormatImporter": {
-            "externalObjects": {},
-            "mainObjectFileID": "2100000",
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Materials/Black.mat.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "69561553b86bde34da494d1ffed3ba45",
-          "NativeFormatImporter": {
-            "externalObjects": {},
-            "mainObjectFileID": "2100000",
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Core/Settings/GlobalDisplaySettings.asset.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "35fab21375bf12f4b96eba4dafa4ad30",
-          "NativeFormatImporter": {
-            "externalObjects": {},
-            "mainObjectFileID": "11400000",
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Core/Runtime/Utility.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "4c55bdfe2cdafc04ba5f909d4f1f192b",
-          "folderAsset": "yes",
-          "DefaultImporter": {
-            "externalObjects": {},
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Core/Runtime/PathCreator.asmdef.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "626070ea3273cb844a310aa4f53b31fa",
-          "AssemblyDefinitionImporter": {
-            "externalObjects": {},
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Core/Runtime/Objects.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "2b76edb14a39ed944b9c906e5f1d3aaa",
-          "folderAsset": "yes",
-          "DefaultImporter": {
-            "externalObjects": {},
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Core/Editor/PathEditor.cs.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "45d81a20743ff42a3b0dfbd499d4797e",
-          "timeCreated": "1516864234",
-          "licenseType": "Store",
-          "MonoImporter": {
-            "externalObjects": {},
-            "serializedVersion": "2",
-            "defaultReferences": [],
-            "executionOrder": "0",
-            "icon": {
-              "instanceID": "0"
-            },
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Core/Editor/PathCreatorEditor.asmdef.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "92ee438f32d811247a22ca14bf2a3fe0",
-          "AssemblyDefinitionImporter": {
-            "externalObjects": {},
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Core/Editor/Helper.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "366e41d4e3408334aad31e48f28757e4",
-          "folderAsset": "yes",
-          "DefaultImporter": {
-            "externalObjects": {},
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Examples/Scripts/Editor/PathSceneToolEditor.cs.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "db8aedf6f6cf2734cb24c49646427e96",
-          "MonoImporter": {
-            "externalObjects": {},
-            "serializedVersion": "2",
-            "defaultReferences": [],
-            "executionOrder": "0",
-            "icon": {
-              "instanceID": "0"
-            },
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Core/Runtime/Utility/VertexPathUtility.cs.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "5505526f3c472e8499fa7ce169410ace",
-          "MonoImporter": {
-            "externalObjects": {},
-            "serializedVersion": "2",
-            "defaultReferences": [],
-            "executionOrder": "0",
-            "icon": {
-              "instanceID": "0"
-            },
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Core/Runtime/Utility/MathUtility.cs.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "096bae1d1ed960d4bb7605dce06767c1",
-          "MonoImporter": {
-            "externalObjects": {},
-            "serializedVersion": "2",
-            "defaultReferences": [],
-            "executionOrder": "0",
-            "icon": {
-              "instanceID": "0"
-            },
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Core/Runtime/Utility/CubicBezierUtility.cs.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "c66a6536bb2d641558729d6da1ec7594",
-          "timeCreated": "1519565538",
-          "licenseType": "Store",
-          "MonoImporter": {
-            "externalObjects": {},
-            "serializedVersion": "2",
-            "defaultReferences": [],
-            "executionOrder": "0",
-            "icon": {
-              "instanceID": "0"
-            },
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Core/Runtime/Objects/VertexPath.cs.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "223183313f20d4049a397d83fab3151e",
-          "MonoImporter": {
-            "externalObjects": {},
-            "serializedVersion": "2",
-            "defaultReferences": [],
-            "executionOrder": "0",
-            "icon": {
-              "instanceID": "0"
-            },
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Core/Runtime/Objects/PathSpace.cs.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "407af8f85a5bae449bce4730c5d97d1a",
-          "MonoImporter": {
-            "externalObjects": {},
-            "serializedVersion": "2",
-            "defaultReferences": [],
-            "executionOrder": "0",
-            "icon": {
-              "instanceID": "0"
-            },
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Core/Runtime/Objects/PathCreatorData.cs.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "19547029ffb83484e90d00c182104817",
-          "MonoImporter": {
-            "externalObjects": {},
-            "serializedVersion": "2",
-            "defaultReferences": [],
-            "executionOrder": "0",
-            "icon": {
-              "instanceID": "0"
-            },
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Core/Runtime/Objects/PathCreator.cs.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "8e5ac92bc18f545cc84cd886ece82b4d",
-          "timeCreated": "1516864223",
-          "licenseType": "Store",
-          "MonoImporter": {
-            "externalObjects": {},
-            "serializedVersion": "2",
-            "defaultReferences": [],
-            "executionOrder": "0",
-            "icon": {
-              "instanceID": "0"
-            },
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Core/Runtime/Objects/MinMax3D.cs.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "194e1b7893dcbf940a71eb507d8b10f3",
-          "MonoImporter": {
-            "externalObjects": {},
-            "serializedVersion": "2",
-            "defaultReferences": [],
-            "executionOrder": "0",
-            "icon": {
-              "instanceID": "0"
-            },
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Core/Runtime/Objects/GlobalDisplaySettings.cs.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "46d5e8d803e252f4499b52e657f8e1a2",
-          "MonoImporter": {
-            "externalObjects": {},
-            "serializedVersion": "2",
-            "defaultReferences": [],
-            "executionOrder": "0",
-            "icon": {
-              "instanceID": "0"
-            },
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Core/Runtime/Objects/EndOfPathInstruction.cs.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "c0d7fa70c03166e4180909b6e5d546c7",
-          "MonoImporter": {
-            "externalObjects": {},
-            "serializedVersion": "2",
-            "defaultReferences": [],
-            "executionOrder": "0",
-            "icon": {
-              "instanceID": "0"
-            },
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Core/Runtime/Objects/BezierPath.cs.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "756209f371f304fb1920c53a8a25a5e2",
-          "timeCreated": "1516786483",
-          "licenseType": "Store",
-          "MonoImporter": {
-            "externalObjects": {},
-            "serializedVersion": "2",
-            "defaultReferences": [],
-            "executionOrder": "0",
-            "icon": {
-              "instanceID": "0"
-            },
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Core/Editor/Helper/ScreenSpacePolyLine.cs.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "05aed72a972059e45a62e31c2bb60fc4",
-          "MonoImporter": {
-            "externalObjects": {},
-            "serializedVersion": "2",
-            "defaultReferences": [],
-            "executionOrder": "0",
-            "icon": {
-              "instanceID": "0"
-            },
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Core/Editor/Helper/PathHandle.cs.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "804ddb43548540a4ca3b0a534a75c4b3",
-          "MonoImporter": {
-            "externalObjects": {},
-            "serializedVersion": "2",
-            "defaultReferences": [],
-            "executionOrder": "0",
-            "icon": {
-              "instanceID": "0"
-            },
-            "userData": null,
-            "assetBundleName": null,
-            "assetBundleVariant": null
-          }
-        }
-      ]
-    },
-    {
-      "filepath": "Assets/PathCreator/Core/Editor/Helper/MouseUtility.cs.meta",
-      "data": [
-        {
-          "fileId": "2",
-          "type": "fileFormatVersion:",
-          "guid": "bd0de63ca5c52504a8d2063418a326c3",
-          "MonoImporter": {
-            "externalObjects": {},
-            "serializedVersion": "2",
-            "defaultReferences": [],
-            "executionOrder": "0",
-            "icon": {
-              "instanceID": "0"
-            },
             "userData": null,
             "assetBundleName": null,
             "assetBundleVariant": null

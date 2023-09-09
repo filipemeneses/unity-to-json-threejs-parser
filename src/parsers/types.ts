@@ -1,14 +1,21 @@
 /* eslint-disable no-unused-vars */
+import type * as THREE from 'THREE';
 
 export type BlockParsed = {
     sourceGuid?: string,
     props: any
 }
 export type SceneContext = {
+    sceneData: any,
+    unityContext: any,
+    metaFiles: any[],
     guidMapping: {[key: string]: any},
+    filepathMapping: {[key: string]: any},
     fileIdMapping: {[key: string]: any},
-    filenameMapping: {[key: string]: any},
-    addReference: (key: string, value: any) => void
+    gltfByGuid: {[key: string]: THREE.Group},
+
+    THREE: any,
+    cloneGltf: any,
 }
 
 export type BlockParser = (
@@ -17,7 +24,6 @@ export type BlockParser = (
 ) => BlockParsed | null
 
 export type UnitySceneBlockParser = {
-    type: string,
     isParserType: (block: any) => boolean,
     parseBlock: BlockParser
 }

@@ -21,15 +21,21 @@ function decode(base64: string) {
 
 export const decodeAllEntriesAsGltf = async (
   GLTFLoader: any,
-  objMapB64Gltf: {[key:string]: string},
+  { filepathMapping, unityFiles },
 ) => {
   const gltfObjects: {[key:string]: any} = {};
-  await Promise.all(Object.entries(objMapB64Gltf)
-    .map(async ([key, value]) => {
-      gltfObjects[key] = await parseGltf(
-        GLTFLoader,
-        decode(value as string),
-      );
-    }));
+  await Promise.all(
+    unityFiles
+      .filter((f) => f.filepath.endsWith('.fbx'))
+      .map(async (f) => {
+        const metaFile = filepathMapping[`${f.filepath}.meta`];
+        const { guid } = metaFile.data[0];
+        const value = f.data;
+        gltfObjects[guid] = await parseGltf(
+          GLTFLoader,
+          decode(value as string),
+        );
+      }),
+  );
   return gltfObjects;
 };
