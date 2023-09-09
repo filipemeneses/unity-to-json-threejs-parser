@@ -22,6 +22,29 @@ npm install unity-to-json-threejs-parser
 yarn add unity-to-json-threejs-parser
 ```
 
+## Usage
+
+```js
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import unityScene from './unity-scene.json'; // generated using unity-to-json
+
+const parseUnityJsonToThreejs = createUnityJsonToThreeJsParser({
+    THREE,
+    GLTFLoader
+});
+const instances = await parseUnityJsonToThreejs(unityScene);
+
+instance.forEach(threejsItem => {
+    if (threejsItem instanceof THREE.Group) {
+        // add to scene
+        // scene.add(threeJsGroup)
+    }
+})
+```
+
+
+
 [build-img]:https://github.com/filipemeneses/unity-to-json-threejs-parser/actions/workflows/release.yml/badge.svg
 [build-url]:https://github.com/filipemeneses/unity-to-json-threejs-parser/actions/workflows/release.yml
 [downloads-img]:https://img.shields.io/npm/dt/unity-to-json-threejs-parser
