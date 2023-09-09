@@ -17,7 +17,6 @@ const main = async () => {
     if (instance instanceof THREE.Camera) {
       camera.copy(instance);
     } else {
-      console.log(instance)
       if (Array.isArray(instance)) {
         instance.forEach(i=>scene.add(i))
       } else {

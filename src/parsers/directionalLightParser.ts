@@ -1,15 +1,15 @@
 import { UnitySceneBlockParser } from './types';
 
-const SPOT_LIGHT_TYPE = '2';
+const DIRECTIONAL_LIGHT_TYPE = '1';
 
-export const lightParser: UnitySceneBlockParser = {
+export const directionalLightParser: UnitySceneBlockParser = {
   isParserType(block, { fileIdMapping }) {
     const components = block?.GameObject?.m_Component ?? [];
     if (!components.length) {
       return false;
     }
     const hasLightComponent = !!components.find(
-      (c) => fileIdMapping[c?.component?.fileID]?.Light?.m_Type === SPOT_LIGHT_TYPE,
+      (c) => fileIdMapping[c?.component?.fileID]?.Light?.m_Type === DIRECTIONAL_LIGHT_TYPE,
     );
 
     return hasLightComponent;
@@ -26,7 +26,7 @@ export const lightParser: UnitySceneBlockParser = {
     let position = [0, 0, 0];
     let color = 0xfff;
     let intensity = 1;
-    let distance = 0;
+    let rotation = [1, 1, 1, 1];
 
     components.forEach((c) => {
       if (c?.Transform?.m_LocalPosition) {
@@ -36,11 +36,16 @@ export const lightParser: UnitySceneBlockParser = {
           Number(y) * 100,
           Number(z) * -100,
         ];
+        rotation = [
+          Number(c?.Transform['m_LocalRotation.x'] || 1),
+          Number(c?.Transform['m_LocalRotation.y'] || 1),
+          -Number(c?.Transform['m_LocalRotation.z'] || 1),
+          -Number(c?.Transform['m_LocalRotation.w'] || 1),
+        ];
       }
       if (c?.Light?.m_Color) {
         const { r, g, b } = c.Light.m_Color;
-        intensity = Number(c.Light.m_Intensity) * 10000;
-        distance = Number(c.Light.m_Range) * 10000;
+        intensity = Number(c.Light.m_Intensity) * 10;
 
         const parsedColors = [r, g, b].map((v) => Math.floor(Number(v) * 255));
 
@@ -49,9 +54,13 @@ export const lightParser: UnitySceneBlockParser = {
       }
     });
 
-    const light = new THREE.PointLight(color, intensity, distance);
+    const light = new THREE.DirectionalLight(color, intensity);
+
     light.position.set(...position);
     light.castShadow = true;
+    light.rotation.setFromQuaternion(
+      new THREE.Quaternion(...rotation),
+    );
 
     return light;
   },
