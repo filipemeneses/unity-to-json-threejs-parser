@@ -33,7 +33,7 @@ const parseUnityJsonToThreejs = createUnityJsonToThreeJsParser({
     THREE,
     GLTFLoader
 });
-const instances = await parseUnityJsonToThreejs(unityScene);
+const instances = await parseUnityJsonToThreejs('MyScene', unityContext);
 
 instance.forEach(threejsItem => {
     if (threejsItem instanceof THREE.Group) {
@@ -42,8 +42,6 @@ instance.forEach(threejsItem => {
     }
 })
 ```
-
-
 
 [build-img]:https://github.com/filipemeneses/unity-to-json-threejs-parser/actions/workflows/release.yml/badge.svg
 [build-url]:https://github.com/filipemeneses/unity-to-json-threejs-parser/actions/workflows/release.yml
