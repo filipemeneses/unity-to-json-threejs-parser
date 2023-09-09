@@ -2,24 +2,40 @@
 import { parsers } from './parsers';
 import { UnitySceneBlockParser } from './parsers/types';
 
-export const interpretScene = async ({
-  sceneData,
-  guidMapping,
-  filenameMapping,
-
+export const sanitizeUnityJson = async ({
+  unitySceneName,
+  unityContext,
+}: {
+  unitySceneName: string,
+  unityContext: any,
+}, {
   blockParsers = parsers,
   extraParsers = [],
 }: {
-  sceneData: any,
-  guidMapping: any,
-  filenameMapping: any,
-
   blockParsers?: UnitySceneBlockParser[],
   extraParsers?: UnitySceneBlockParser[],
-}) => {
+} = {}) => {
+  const unityFiles = unityContext.files;
+  const sceneData = unityFiles.find((f) => f.filepath.includes(unitySceneName))?.data;
   if (!sceneData || !Object.keys(sceneData)?.length) return {};
+
+  const metaFiles = unityFiles.filter((f) => f.filepath.endsWith('meta'));
+  const guidMapping = metaFiles.reduce((obj: any, file: any) => {
+    const guid = file?.data?.guid || file?.data?.[0]?.guid;
+    obj[guid] = file;
+
+    return obj;
+  }, {});
+
   if (!guidMapping || !Object.keys(guidMapping)?.length) return {};
-  if (!filenameMapping || !Object.keys(filenameMapping)?.length) return {};
+
+  const filepathMapping = unityFiles.reduce((obj, file) => {
+    obj[file.filepath] = file;
+
+    return obj;
+  }, {});
+
+  if (!filepathMapping || !Object.keys(filepathMapping)?.length) return {};
 
   const fileIdMapping = sceneData.reduce((mapping: {[key: string]: any}, nextItem: any) => {
     // eslint-disable-next-line no-param-reassign
@@ -50,7 +66,7 @@ export const interpretScene = async ({
         return (
           parser.parseBlock(block, {
             guidMapping,
-            filenameMapping,
+            filepathMapping,
             fileIdMapping,
             addReference,
           })

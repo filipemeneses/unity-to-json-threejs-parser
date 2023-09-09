@@ -85,6 +85,6 @@
   },
   "dependencies": {
     "three": "^0.156.1",
-    "unity-to-json": "^1.1.0"
+    "unity-to-json": "^1.2.0"
   }
 }

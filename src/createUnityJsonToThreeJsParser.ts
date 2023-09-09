@@ -1,61 +1,41 @@
 import type * as THREE from 'three';
-import { interpretScene } from './interpretScene';
 import { decodeAllEntriesAsGltf } from './decodeAllEntriesAsGltf';
+import { createGltfClonner } from './three/createGltfClonner';
+import { sanitizeUnityJson } from './sanitizeUnityJson';
+import type { UnitySceneBlockParser } from './parsers/types';
 
-export const createUnityJsonToThreeJsParser = ({ THREE, GLTFLoader }) => {
-  const cloneGltf = (gltf: any) => {
-    const clone = {
-      animations: gltf.animations,
-      scene: gltf.scene.clone(true),
-    };
-
-    const skinnedMeshes: any = {};
-
-    gltf.scene.traverse((node: any) => {
-      if (node.isSkinnedMesh) {
-        skinnedMeshes[node.name] = node;
-      }
-    });
-
-    const cloneBones: any = {};
-    const cloneSkinnedMeshes: any = {};
-
-    clone.scene.traverse((node: any) => {
-      if (node.isBone) {
-        cloneBones[node.name] = node;
-      }
-
-      if (node.isSkinnedMesh) {
-        cloneSkinnedMeshes[node.name] = node;
-      }
-    });
-
-    // eslint-disable-next-line no-restricted-syntax, guard-for-in
-    for (const name in skinnedMeshes) {
-      const skinnedMesh = skinnedMeshes[name];
-      const { skeleton } = skinnedMesh;
-      const cloneSkinnedMesh = cloneSkinnedMeshes[name];
-
-      const orderedCloneBones = [];
-
-      for (let i = 0; i < skeleton.bones.length; i += 1) {
-        const cloneBone = cloneBones[skeleton.bones[i].name];
-        orderedCloneBones.push(cloneBone);
-      }
-
-      cloneSkinnedMesh.bind(
-        new THREE.Skeleton(orderedCloneBones, skeleton.boneInverses),
-        cloneSkinnedMesh.matrixWorld,
-      );
-    }
-
-    return clone;
-  };
-
+export const createUnityJsonToThreeJsParser = (
+  {
+    // eslint-disable-next-line no-shadow
+    THREE,
+    GLTFLoader,
+  }: {
+    THREE: any,
+    GLTFLoader: any
+  },
+  {
+    sanitizers,
+  }: {
+    sanitizers?: UnitySceneBlockParser[]
+  } = {},
+) => {
+  const cloneGltf = createGltfClonner({ THREE });
   type ThreeJSObject = THREE.PerspectiveCamera | THREE.Group
 
-  const parseUnityJsonToThreejs = async (unitySceneContext: any): Promise<ThreeJSObject[]> => {
-    const threeJsParsable: any = await interpretScene(unitySceneContext);
+  return async (
+    unitySceneName: string,
+    unityContext: any,
+  ): Promise<ThreeJSObject[]> => {
+    const threeJsParsable: any = await sanitizeUnityJson(
+      {
+        unitySceneName,
+        unityContext,
+      },
+      {
+        extraParsers: sanitizers,
+      },
+    );
+
     const gltfObjects: any = await decodeAllEntriesAsGltf(GLTFLoader, threeJsParsable.references);
 
     const instances: ThreeJSObject[] = [];
@@ -143,6 +123,4 @@ export const createUnityJsonToThreeJsParser = ({ THREE, GLTFLoader }) => {
 
     return instances;
   };
-
-  return parseUnityJsonToThreejs;
 };

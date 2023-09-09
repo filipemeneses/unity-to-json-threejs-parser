@@ -3,7 +3,7 @@ import { createUnityJsonToThreeJsParser } from '../src/createUnityJsonToThreeJsP
 import { mountThreeJsBaseScene } from './mountThreeJsBaseScene';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import './style.css';
-import unityScene from './unity-scene.json';
+import unityContext from './unity-scene.json';
 
 const main = async () => {
   const { scene, camera } = mountThreeJsBaseScene(document.querySelector('#app'));
@@ -11,7 +11,7 @@ const main = async () => {
     THREE,
     GLTFLoader
   });
-  const instances = await parseUnityJsonToThreejs(unityScene);
+  const instances = await parseUnityJsonToThreejs('SampleScene', unityContext);
 
   instances.forEach((instance) => {
     if (instance instanceof THREE.Group) {
