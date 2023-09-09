@@ -1,25 +1,8 @@
 import type * as THREE from 'three';
 import { interpretScene } from './interpretScene';
+import { decodeAllEntriesAsGltf } from './decodeAllEntriesAsGltf';
 
 export const createUnityJsonToThreeJsParser = ({ THREE, GLTFLoader }) => {
-  const parseGltf = async (fbxObject: any): Promise<THREE.Group> => (
-    new Promise((resolve, reject) => {
-      new GLTFLoader().parse(fbxObject, '', (e: any) => {
-        resolve(e);
-      }, (e: any) => {
-        reject(e);
-      });
-    })
-  );
-  function decode(base64: string) {
-    const binaryString = atob(base64);
-    const bytes = new Uint8Array(binaryString.length);
-    for (let i = 0; i < binaryString.length; i += 1) {
-      bytes[i] = binaryString.charCodeAt(i);
-    }
-    return bytes.buffer;
-  }
-
   const cloneGltf = (gltf: any) => {
     const clone = {
       animations: gltf.animations,
@@ -73,18 +56,7 @@ export const createUnityJsonToThreeJsParser = ({ THREE, GLTFLoader }) => {
 
   const parseUnityJsonToThreejs = async (unitySceneContext: any): Promise<ThreeJSObject[]> => {
     const threeJsParsable: any = await interpretScene(unitySceneContext);
-    const gltfObjects: any = {};
-
-    await Promise.all(Object.entries(threeJsParsable.references)
-      .map(async ([key, value]) => {
-        try {
-          gltfObjects[key] = await parseGltf(
-            decode(value as string),
-          );
-        } catch (e) {
-          console.error(e);
-        }
-      }));
+    const gltfObjects: any = await decodeAllEntriesAsGltf(GLTFLoader, threeJsParsable.references);
 
     const instances: ThreeJSObject[] = [];
 
