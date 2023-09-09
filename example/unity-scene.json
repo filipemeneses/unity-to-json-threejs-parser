@@ -60,7 +60,7 @@
               "b": "0.035",
               "a": "1"
             },
-            "m_AmbientIntensity": "1",
+            "m_AmbientIntensity": "1.12",
             "m_AmbientMode": "0",
             "m_SubtractiveShadowColor": {
               "r": "0.34509802",
@@ -527,9 +527,9 @@
               "w": "1"
             },
             "m_LocalPosition": {
-              "x": "0.46",
-              "y": "-1.91",
-              "z": "-3.79"
+              "x": "0.725",
+              "y": "0.11",
+              "z": "-2.213"
             },
             "m_LocalScale": {
               "x": "1",
@@ -884,9 +884,9 @@
               "w": "1"
             },
             "m_LocalPosition": {
-              "x": "-2.01",
-              "y": "0.98",
-              "z": "-2.88"
+              "x": "-0.52",
+              "y": "0.353",
+              "z": "-1.88"
             },
             "m_LocalScale": {
               "x": "1",

@@ -6,7 +6,6 @@ export type BlockParsed = {
     props: any
 }
 export type SceneContext = {
-    sceneData: any,
     unityContext: any,
     metaFiles: any[],
     guidMapping: {[key: string]: any},
@@ -24,6 +23,6 @@ export type BlockParser = (
 ) => BlockParsed | null
 
 export type UnitySceneBlockParser = {
-    isParserType: (block: any) => boolean,
+    isParserType: (block: any, sceneContext?: SceneContext) => boolean,
     parseBlock: BlockParser
 }

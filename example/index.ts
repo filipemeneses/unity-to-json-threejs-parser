@@ -14,11 +14,16 @@ const main = async () => {
   const instances = await parseUnityJsonToThreejs('SampleScene', unityContext);
 
   instances.forEach((instance) => {
-    if (instance instanceof THREE.Group) {
-      scene.add(instance);
-    }
     if (instance instanceof THREE.Camera) {
       camera.copy(instance);
+    } else {
+      console.log(instance)
+      if (Array.isArray(instance)) {
+        instance.forEach(i=>scene.add(i))
+      } else {
+      scene.add(instance);
+
+      }
     }
   });
 };
