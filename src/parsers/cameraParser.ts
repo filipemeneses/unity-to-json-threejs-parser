@@ -35,13 +35,31 @@ export const cameraParser: UnitySceneBlockParser = {
     } = props.transform.m_LocalPosition;
     const localRotation = props.transform.m_LocalRotation;
     const unityCamera = props.camera;
+    const isOrthographic = unityCamera.orthographic === '1';
 
-    const camera = new THREE.PerspectiveCamera(
-      45,
-      window.innerWidth / window.innerHeight,
-      1,
-      2000,
-    );
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    let camera;
+
+    if (isOrthographic) {
+      camera = new THREE.OrthographicCamera(
+        width / -2,
+        width / 2,
+        height / 2,
+        height / -2,
+        1,
+        10000,
+      );
+    } else {
+      camera = new THREE.PerspectiveCamera(
+        45,
+        width / height,
+        1,
+        10000,
+      );
+    }
+
     camera.position.setX(Number(x) * 100);
     camera.position.setY(Number(y) * 100);
     camera.position.setZ(Number(z) * -100);

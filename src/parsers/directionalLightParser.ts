@@ -27,6 +27,7 @@ export const directionalLightParser: UnitySceneBlockParser = {
     let color = 0xfff;
     let intensity = 1;
     let rotation = [1, 1, 1, 1];
+    let shouldCastShadow = false;
 
     components.forEach((c) => {
       if (c?.Transform?.m_LocalPosition) {
@@ -52,12 +53,14 @@ export const directionalLightParser: UnitySceneBlockParser = {
         const threeColor = new THREE.Color(`rgb(${parsedColors})`);
         color = threeColor.getHex();
       }
+      if (c?.Light?.m_Shadows) {
+        shouldCastShadow = c.Light.m_Shadows.m_Type !== '0';
+      }
     });
 
     const light = new THREE.DirectionalLight(color, intensity);
 
-    light.position.set(...position);
-    light.castShadow = true;
+    light.castShadow = shouldCastShadow;
     light.rotation.setFromQuaternion(
       new THREE.Quaternion(...rotation),
     );

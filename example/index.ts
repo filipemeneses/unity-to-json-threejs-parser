@@ -20,8 +20,7 @@ const main = async () => {
       if (Array.isArray(instance)) {
         instance.forEach(i=>scene.add(i))
       } else {
-      scene.add(instance);
-
+       scene.add(instance);
       }
     }
   });

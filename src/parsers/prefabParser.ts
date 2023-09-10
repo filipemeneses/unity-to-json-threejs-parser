@@ -41,7 +41,13 @@ export const prefabParser: UnitySceneBlockParser = {
     const instanceGroup = clone.scene;
     instanceGroup.name = instanceProps.m_Name;
 
-    const changeableGroup = instanceGroup;
+    instanceGroup.traverse((child) => {
+      if (!child.isMesh) {
+        return;
+      }
+      child.castShadow = true;
+      child.receiveShadow = true;
+    });
 
     const positionX = 100 * Number(instanceProps['m_LocalPosition.x']);
     const positionY = 100 * Number(instanceProps['m_LocalPosition.y']);
@@ -56,13 +62,13 @@ export const prefabParser: UnitySceneBlockParser = {
     const rotationY = Number(instanceProps['m_LocalRotation.y'] || 1);
     const rotationZ = Number(instanceProps['m_LocalRotation.z'] || 1);
 
-    changeableGroup.position.set(positionX, positionY, positionZ);
+    instanceGroup.position.set(positionX, positionY, positionZ);
 
-    changeableGroup.scale.setX(scaleX);
-    changeableGroup.scale.setY(scaleY);
-    changeableGroup.scale.setZ(scaleZ);
+    instanceGroup.scale.setX(scaleX);
+    instanceGroup.scale.setY(scaleY);
+    instanceGroup.scale.setZ(scaleZ);
 
-    changeableGroup.rotation.setFromQuaternion(
+    instanceGroup.rotation.setFromQuaternion(
       new THREE.Quaternion(rotationX, rotationY, -rotationZ, -rotationW),
     );
 
