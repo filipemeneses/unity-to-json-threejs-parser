@@ -43,6 +43,10 @@ instance.forEach(threejsItem => {
 })
 ```
 
+## Examples
+
+- See [https://github.com/filipemeneses/svelte-vite-unity-threejs](https://github.com/filipemeneses/svelte-vite-unity-threejs)
+
 [build-img]:https://github.com/filipemeneses/unity-to-json-threejs-parser/actions/workflows/release.yml/badge.svg
 [build-url]:https://github.com/filipemeneses/unity-to-json-threejs-parser/actions/workflows/release.yml
 [downloads-img]:https://img.shields.io/npm/dt/unity-to-json-threejs-parser
